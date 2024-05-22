@@ -24,9 +24,12 @@ function NavBar() {
                             <NavDropdown title="Students" className="navbar-dropdown">
                                 {/* <Link to="/student-create" ><NavDropdown.Item >Add Student</NavDropdown.Item> </Link> */}
 
-                                <NavDropdown.Item ><Link to="/student-create" >Add Student</Link></NavDropdown.Item>
-                                <NavDropdown.Item ><Link to="/student-list" >Student List</Link></NavDropdown.Item>
-                                <NavDropdown.Item ><Link to="/student-demo-table" >Student Demo Table</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to="/student-create" style={{ color: 'inherit', textDecoration: 'none' }}
+                                >Add Student</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to="/student-list" style={{ color: 'inherit', textDecoration: 'none' }}
+                                >Student List</Link></NavDropdown.Item>
+                                {/* <NavDropdown.Item ><Link to="/student-demo-table" style={{ color: 'inherit', textDecoration: 'none' }}
+                                >Student Demo Table</Link></NavDropdown.Item> */}
                                 <NavDropdown.Item >Edit Student</NavDropdown.Item>
                                 <NavDropdown.Item>Delete Student</NavDropdown.Item>
                             </NavDropdown>
