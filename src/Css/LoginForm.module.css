@@ -1,12 +1,14 @@
+
 .loginForm {
-  background: rgba(225, 225, 225, 0.3);
-  backdrop-filter: blur(5px);
+  background: rgba(225, 225, 225, 0.3); 
+  backdrop-filter: blur(5px); 
   padding: 20px;
   border-radius: 20px;
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
   box-shadow: 0 4px 30px #0000001a;
-  color: #000000;
-  max-width: 400px;
-  margin: 20px auto;
+width: 35%;
+  color: #000000; 
+
 }
 
 .loginForm h2 {
@@ -20,6 +22,7 @@
   width: 70%;
   line-height: 17px;
   margin: auto;
+  /* border: 2px solid red; */
   text-align: center;
   margin-top: -10px;
   padding-bottom: 20px;
@@ -36,13 +39,15 @@
 
 .inputWrapper,
 .passwordWrapper {
-  position: relative;
+  position: relative; 
 }
 
 .inputWrapper input,
 .passwordWrapper input {
-  width: calc(100% - 50px);
-  padding: 10px 35px 10px 15px;
+  width: 90%; 
+  position: relative;
+  transform: translateX(5%);
+  padding: 10px 35px 10px 15px; 
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background: rgba(136, 124, 124, 0.1);
@@ -51,7 +56,6 @@
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
-
 ::placeholder {
   color: black;
 }
@@ -65,17 +69,17 @@
 }
 
 .userIcon {
-  right: 15px;
+  right: 27px; 
 }
 
 .eyeIcon {
-  right: 15px;
+  right: 27px; 
 }
 
 .error {
   color: red;
-  background: rgba(225, 225, 225, 0.3);
-  backdrop-filter: blur(7px);
+    background: rgba(225, 225, 225, 0.3); 
+  backdrop-filter: blur(7px); 
   border-radius: 10px;
   font-size: 12px;
   margin-top: 5px;
@@ -84,26 +88,28 @@
 }
 
 button {
-  width: calc(100% - 30px);
+  width: 90%;
+  position: relative;
+  transform: translateX(5%);
   padding: 10px;
   background-color: rgb(170, 45, 47);
+
   color: rgb(0, 0, 0);
   border: none;
   font-weight: 500;
   border-radius: 10px;
-  cursor: pointer;
-  margin: 0 15px;
+  cursor: pointer; 
+  
 }
 
 button:hover {
-  transition: all 0.5s;
+  transition:all 0.5 seconds;
   background-color: rgb(156, 48, 50);
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;    
 }
-
-.formFooter {
+.formFooter{
   text-align: center;
-  margin-top: 20px;
+  margin-top:20px;
   margin-bottom: 40px;
 }
 
@@ -112,6 +118,7 @@ button:hover {
   text-align: center;
   color: #000000;
   text-decoration: none;
+
 }
 
 .register:hover {
@@ -121,7 +128,7 @@ button:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .loginForm {
-      width: 80vw;
+      width: 60vw;
       padding: 15px;
   }
 }

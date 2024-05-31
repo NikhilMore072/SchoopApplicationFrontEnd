@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios'; // Import axios for HTTP requests
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import styles from '../Css/LoginForm.module.css';
@@ -29,14 +30,26 @@ const LoginForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      console.log('Logging in with', { name, password });
+      try {
+        const response = await axios.post('https://your-api-endpoint.com/login', {
+          name,
+          password,
+        });
+        const token = response.data.token;
+        localStorage.setItem('authToken', token);
+        console.log('Login successful, token saved to localStorage:', token);
+        // Redirect to another page or perform further actions
+      } catch (error) {
+        console.error('Login failed:', error.response.data);
+        setErrors({ api: 'Login failed. Please check your credentials and try again.' });
+      }
     }
   };
 
@@ -77,10 +90,9 @@ const LoginForm = () => {
               onClick={toggleShowPassword}
             />
           </div>
-          {errors.password && (
-            <span className={styles.error}>{errors.password}</span>
-          )}
+          {errors.password && <span className={styles.error}>{errors.password}</span>}
         </div>
+        {errors.api && <span className={styles.error}>{errors.api}</span>}
         <button type="submit">Login</button>
         <div className={styles.formFooter}>
           <span>Don't have an account? </span>

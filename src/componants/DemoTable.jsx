@@ -1,6 +1,7 @@
 import React from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
+import authManage from '../utils/auth';
 
 function DemoTable() {
     // Define your dummy data
@@ -48,4 +49,4 @@ function DemoTable() {
     );
 }
 
-export default DemoTable;
+export default authManage(DemoTable);

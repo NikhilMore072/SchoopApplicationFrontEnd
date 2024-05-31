@@ -6,11 +6,11 @@
   overflow-y: auto; /* Make the container scrollable */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .loginContainerChild {
-  width: 80vw; /* Adjusted width for better appearance on different screens */
+  width: 100%; 
   max-width: 1200px;
   height: auto;
   display: flex;
@@ -20,7 +20,9 @@
   flex-direction: row;
   /* background: rgba(255, 255, 255, 0.8); Light background to improve readability */
   border-radius: 10px;
-  padding: 20px;
+  /* padding: 20px; */
+  border:3px solid rgb(0, 0, 0);
+
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
 

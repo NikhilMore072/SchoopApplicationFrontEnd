@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom'; // Import Link component from react-router-dom
 import axios from 'axios';
+import authManage from '../utils/auth';
 
 function StudentEdit() {
     let { id } = useParams();
@@ -384,4 +385,4 @@ function StudentEdit() {
     )
 }
 
-export default StudentEdit
+export default authManage(StudentEdit)

@@ -1,11 +1,14 @@
 .notification {
-  width: 300px;
+  width: 35%;
   height: 70vh;
   background: rgba(225, 225, 225, 0.3);
   backdrop-filter: blur(5px);
   overflow-x: hidden;
   overflow-y: scroll;
-  margin: 20px auto;
+  margin: 20px 0 20px 0;
+ 
+  /* border:3px solid red; */
+  
 }
 
 .notification::-webkit-scrollbar {
@@ -48,7 +51,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .notification {
-      width: 80vw;
+      width: 60vw;
       /* height: 50vh; */
   }
 }
