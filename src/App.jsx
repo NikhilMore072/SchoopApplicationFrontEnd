@@ -5,13 +5,20 @@ import './App.css'
 import NavBar from './Header/NavBar'
 import Index from './router/Index'
 
+import Login from './componants/LandingPage'
+// import SimpleForm from './componants/SimpleForm'
+
+
+
 function App() {
 
-
+ 
   return (
     <div>
-      <NavBar />
-
+     <Login/> 
+     
+      {/* <NavBar /> */}
+     {/* <Card/> */}
       <Index />
     </div>
   )
