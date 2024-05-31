@@ -6,7 +6,7 @@
   border-radius: 20px;
   /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
   box-shadow: 0 4px 30px #0000001a;
-width: 35%;
+width: 30%;
   color: #000000; 
 
 }
@@ -128,7 +128,7 @@ button:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .loginForm {
-      width: 60vw;
+      width: 80vw;
       padding: 15px;
   }
 }
