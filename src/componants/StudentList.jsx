@@ -3,6 +3,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import authManage from '../utils/auth';
 
 function StudentList() {
     const [students, setStudents] = useState([]);
@@ -119,6 +120,6 @@ function StudentList() {
     );
 }
 
-export default StudentList;
+export default authManage(StudentList);
 
 

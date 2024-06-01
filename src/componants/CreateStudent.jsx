@@ -1,9 +1,8 @@
-
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import Link component from react-router-dom
 import axios from 'axios';
 import '../componants/studentstyle.css';
+import authManage from '../utils/auth';
 
 function CreateStudent() {
     const [formData, setFormData] = useState({
@@ -505,5 +504,5 @@ function CreateStudent() {
     );
 }
 
-export default CreateStudent;
+export default authManage(CreateStudent);
 

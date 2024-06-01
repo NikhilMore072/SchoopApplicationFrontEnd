@@ -1,57 +1,74 @@
-/* Custom CSS for DataTable */
-.dataTables_wrapper {
-    margin: 0 auto;
-}
-
-table.dataTable thead th {
-    border-bottom: none;
-}
-
-table.dataTable tbody tr {
-    border-bottom: 1px solid #ddd;
-}
-
-table.dataTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table.dataTable tbody tr:hover {
-    background-color: #ddd;
-}
-
-.dataTables_length select {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 6px 12px;
-}
-
-.dataTables_filter input {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 6px 12px;
-}
-
-.dataTables_info {
+.loginForm {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .loginForm h2 {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formGroup input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .passwordWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .passwordWrapper input {
+    flex: 1;
+  }
+  
+  .eyeIcon {
+    margin-left: -30px;
+    cursor: pointer;
+    color: #007BFF;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .forgotPassword {
+    display: block;
     margin-top: 10px;
-}
-
-.dataTables_paginate .paginate_button {
-    border-radius: 4px;
-    margin: 0 5px;
-}
-
-.dataTables_paginate .paginate_button.current {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
-}
-
-.dataTables_paginate .paginate_button.disabled {
-    color: #6c757d;
-}
-
-.dataTables_paginate .paginate_button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    color: #fff;
-}
+    text-align: right;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .forgotPassword:hover {
+    text-decoration: underline;
+  }
+  
