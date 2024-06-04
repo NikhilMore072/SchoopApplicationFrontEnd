@@ -44,6 +44,7 @@ function CreateStudent() {
     });
 
     const navigate = useNavigate();
+    const token = "your-auth-token";
 
 
     const handleChange = (e) => {
@@ -56,8 +57,14 @@ function CreateStudent() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = localStorage.getItem("authToken");
+
         try {
-            const response = await axios.post(`http://127.0.0.1:8000/api/students`, formData);
+            const response = await axios.post(`http://127.0.0.1:8000/api/students`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             alert(response.data.message);
             navigate('/student-list');
 

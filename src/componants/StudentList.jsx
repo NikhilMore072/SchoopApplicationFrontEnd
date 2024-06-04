@@ -3,33 +3,48 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../Header/NavBar';
 
 function StudentList() {
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/students')
-            .then(res => {
-                // console.log(res);
-                setStudents(res.data);
-            })
-            .catch(error => {
-                console.error('Error fetching students:', error);
-            });
+        const fetchStudents = async () => {
+            const token = localStorage.getItem('authToken');
+            if (token) {
+                try {
+                    const res = await axios.get('http://127.0.0.1:8000/api/students', {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+                    setStudents(res.data);
+                } catch (error) {
+                    console.error('Error fetching students:', error);
+                }
+            }
+        };
+        fetchStudents();
     }, []);
 
-    const deleteStudent = (e, id) => {
+    const deleteStudent = async (e, id) => {
         e.preventDefault();
 
         const isConfirmed = window.confirm('Are you sure you want to delete this student?');
         if (isConfirmed) {
-            axios.delete(`http://127.0.0.1:8000/api/students/${id}/delete`)
-                .then(res => {
+            const token = localStorage.getItem('authToken');
+            if (token) {
+                try {
+                    await axios.delete(`http://127.0.0.1:8000/api/students/${id}/delete`, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
                     setStudents(prevStudents => prevStudents.filter(student => student.id !== id));
-                })
-                .catch(error => {
+                } catch (error) {
                     console.error('Error deleting student:', error);
-                });
+                }
+            }
         }
     };
 
@@ -55,70 +70,47 @@ function StudentList() {
     ));
 
     return (
-        // <div>
-        //     <h1>Student List</h1>
-        //     <table className='table'>
-        //         <thead>
-        //             <tr>
-        //                 <th>ID</th>
-        //                 <th>Name</th>
-        //                 <th>Aadhaar No</th>
-        //                 <th>Class</th>
-        //                 <th>State</th>
-        //                 <th>City</th>
-        //                 <th>Pincode</th>
-        //                 <th>Religion</th>
-        //                 <th>Caste</th>
-        //                 <th>Emergency Address</th>
-        //                 <th>Edit</th>
-        //                 <th>Delete</th>
-        //             </tr>
-        //         </thead>
-        //         <tbody>
-        //             {studentDetails}
-        //         </tbody>
-        //     </table>
-        // </div>
-        <div className='container mt-5'>
-            <div className='row'>
+        <>
+            <NavBar />
 
-                <div className='card'>
-                    <div className='card-header bg-dark'>
-                        <h4 style={{ color: 'white' }}>
-                            Students List
-                        </h4>
-                        <p style={{ color: 'white' }}>Here you see all the student list</p>
-                    </div>
-                    <div className="card-body">
-                        <table className='table table-striped'>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>AasharNo</th>
-                                    <th>Class</th>
-                                    <th>State</th>
-                                    <th>City</th>
-                                    <th>Pin Code</th>
-                                    <th>Relagion</th>
-                                    <th>Caste</th>
-                                    <th>emergency_address</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {studentDetails}
-                            </tbody>
-                        </table>
+            <div className='container mt-5'>
+                <div className='row'>
+                    <div className='card'>
+                        <div className='card-header bg-dark'>
+                            <h4 style={{ color: 'white' }}>Students List</h4>
+                            <p style={{ color: 'white' }}>Here you see all the student list</p>
+                        </div>
+                        <div className="card-body">
+                            <table className='table table-striped'>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Aadhaar No</th>
+                                        <th>Class</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                        <th>Pin Code</th>
+                                        <th>Religion</th>
+                                        <th>Caste</th>
+                                        <th>Emergency Address</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {studentDetails}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
+        </>
     );
 }
 
 export default StudentList;
+
 
 
