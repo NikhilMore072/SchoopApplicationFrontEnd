@@ -1,4 +1,5 @@
 import {useState} from 'react';
+// This is commented
 // const  SimpleForm=()=>{
 
 //     const [formData, setFormData]=useState({
