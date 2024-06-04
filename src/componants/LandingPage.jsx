@@ -1,17 +1,17 @@
-import LandingPage from './LoginForm';
+import Login from './LoginForm';
 import styles from "../Css/LoginParent.module.css";
 import { Notification } from './Notification';
-
-const Login = () => {
+// this is landing page
+const Login= () => {
   return (
     <div className={styles.loginContainer}>
     <div  className={styles.loginContainerChild}>
-      <LandingPage />
+      <Login />
       <Notification/>
 
     </div>
     </div>
- 
+  
   );
 };
 
