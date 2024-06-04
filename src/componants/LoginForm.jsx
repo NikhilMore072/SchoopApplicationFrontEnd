@@ -45,7 +45,8 @@ const LoginForm = () => {
         const token = response.data.token;
         localStorage.setItem('authToken', token);
         console.log('Login successful, token saved to localStorage:', token);
-        // Redirect to another page or perform further actions
+        // Redirect to another page or perform further actions added
+        
       } catch (error) {
         console.error('Login failed:', error.response.data);
         setErrors({ api: 'Login failed. Please check your credentials and try again.' });
