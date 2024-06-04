@@ -5,7 +5,7 @@ export const Notification = () => {
     <div className={styles.notification}>
       <h6 className={styles.notificationHeading}>General Instructions:</h6>
       <ul className={styles.list}>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elite.</li>
         <li>Molestiae enim laborum soluta aperiam repellat ullam temporibus illum modi provident natus nostrum expedita, blanditiis recusandae debitis at architecto cupiditate non perspiciatis fugit.</li>
         <li>Laborum, repellendus dolorum inventore omnis hic ipsam quos suscipit totam.</li>
         <li>Excepturi in ut alias aspernatur dicta expedita recusandae nobis eaque voluptates esse minus officia cum quisquam culpa, sed, totam iusto nulla nesciunt deserunt dolorum!</li>
